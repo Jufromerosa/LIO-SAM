@@ -1,0 +1,24 @@
+services:
+  scan2bim:
+    build:
+      context: ../
+      dockerfile: .devcontainer/Dockerfile
+    user: "blacksquare"
+    working_dir: /home/blacksquare
+    network_mode: host
+    ipc: host
+    privileged: true
+
+    environment:
+      - DISPLAY=${DISPLAY}
+
+    volumes:
+      - ..:/ros_ws/src/
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /dev:/dev
+      - /dev/bus/usb:/dev/bus/usb
+      
+    device_cgroup_rules:
+      - 'c *:* rmw'
+      - 'c 189:* rmw'
+    stdin_open: true
