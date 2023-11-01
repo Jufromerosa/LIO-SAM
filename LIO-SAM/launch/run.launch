@@ -17,4 +17,13 @@
     <!--- Run Rviz-->
     <include file="$(find lio_sam)/launch/include/module_rviz.launch" />
 
+    <node pkg="tf2_ros"
+            type="static_transform_publisher"
+            name="laser_transform"
+            args="0 0 0 0 0 0 base_link PandarXT-32"/>
+    <node pkg="tf2_ros"
+            type="static_transform_publisher"
+            name="imu_transform"
+            args="0 0 0 0 0 0 base_link imu_frame"/>
+
 </launch>
