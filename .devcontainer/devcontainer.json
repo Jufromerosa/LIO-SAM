@@ -1,7 +1,7 @@
 {
-	"name": "ROS1 Scan2BIM",
+	"name": "lio-sam_ros1",
 	"dockerComposeFile": "docker-compose.yml",
-	"service": "scan2bim",
+	"service": "lio-sam_ros1",
 	"workspaceFolder": "/ros_ws/src/",
 	"postCreateCommand": "chmod +x .devcontainer/post-create-command.sh && .devcontainer/post-create-command.sh",
 	"customizations": {
